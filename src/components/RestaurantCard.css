@@ -1,0 +1,87 @@
+/* RestaurantCard.css */
+.restaurant-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.restaurant-info {
+  padding: 15px;
+}
+
+.restaurant-name {
+  font-size: 20px;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.restaurant-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.restaurant-rating {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #ffa41b;
+}
+
+.restaurant-rating i {
+  margin-right: 5px;
+}
+
+.restaurant-delivery-time {
+  font-size: 16px;
+  color: #555;
+}
+
+.restaurant-cuisines {
+  font-size: 14px;
+  color: #777;
+}
+
+.res-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.item-counter {
+  display: flex;
+  justify-content: end;
+}
+
+#minus {
+  background-color: tomato;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 4px;
+}
+
+#plus {
+  background-color: green;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 4px;
+}
