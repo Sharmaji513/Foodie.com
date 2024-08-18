@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./RestaurantCard.css";
 import { CDN_URL } from "../utils/constents";
 
 const RestaurantCards = (props) => {
   const { resData } = props;
-  console.log(props);
+  // console.log(props);
 
   const {
     cloudinaryImageId,

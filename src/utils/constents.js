@@ -5,3 +5,7 @@ const API_URL = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/da
 // Named export
 export const CDN_URL =  
 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/'
+
+
+export const WIDGETS_IMG = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/'
+
