@@ -5,11 +5,11 @@ import { WIDGETS_IMG } from '../utils/constents';
 
 
 const WidgetsList = (props) => {
-  const {listOfwidgets, setlistOfWidgets } = props;
-  console.log(props)
+  const {listOfwidgets} = props;
+  // console.log(props)
 
   const imageId = listOfwidgets?.imageId;
-  console.log(imageId)
+  // console.log(imageId)
 
   return (
     <div className='widgets-container'>

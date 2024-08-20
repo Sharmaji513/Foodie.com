@@ -1,0 +1,75 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FE5005;
+    padding: 10px 20px;
+}
+
+.navbar-logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-links span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.navbar-links li {
+    display: inline;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar-links a:hover {
+    color: #ffd700;
+}
+
+.navbar-login {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-btn {
+    background-color: white;
+    color: #FE5005;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 1px solid #FE5005;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    gap: 8px; /* Space between the icon and text */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.navbar-login span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+}

@@ -1,20 +1,26 @@
 import React from 'react'
 import './Header.css';
+import Navbar from './Navbar';
 const Header = () => {
   return (
     <div>
+      <Navbar/>
 
         <div className="header-container">
-            <div className="left-side">
-           
-            <h1 className='main-heading'> Discover the best food & drinks in <span>Delhi NCR</span></h1>
-            <p className="sub-heading">Meals at your doorstep..</p>
-            <button>Order</button>
-            </div>
-           <div className="right-side">
-           <img src="https://i.pinimg.com/originals/e4/1f/86/e41f86f032c1435de39f213ba7a26197.gif" alt="" />
+
+           <div className="left-side">
+           <img src="https://www.swiggy.com/about-us/wp-content/uploads/2024/04/DE-on-bike-2-2.png" alt="" />
            </div>
-          
+           
+           <div className="tagline">
+           <h1 className='main-heading'> Swad Jo Aapke Ghar Tak Aaye...</h1>
+            <p className="sub-heading">Fresh Food, Fast Delivery</p>
+            <button className='order-btn'>Order Now</button>
+           </div>
+            
+           <div className="right-side">
+           <img src="https://www.swiggy.com/about-us/wp-content/uploads/2024/04/03-Instamart_3_front_view_2_skycolour.png" alt="" />
+           </div>
         </div>
     </div>
   )

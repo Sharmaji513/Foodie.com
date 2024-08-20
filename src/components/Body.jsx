@@ -5,17 +5,19 @@ import "./Body.css";
 
 import RestaurantCards from "./RestaurantCards";
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [listOfwidgets, setlistOfWidgets] = useState([]);
 
-  const [heading, setHeading] = useState([]);
+  const [widgetHeading, setWidgetHeading] = useState([]);
+  const [resHeading , setResHeading] = useState([])
   const [isLoading, setIsLoading] = useState(true); // Loading state
 
   const widgetRef = useRef(null);
 
-  // console.log("Body rendered", listOfRestaurants);
+ 
   useEffect(() => {
     fetchData();
   }, []);
@@ -27,9 +29,10 @@ const Body = () => {
     );
 
     const json = await data.json();
-    // console.log(json);
+    console.log(json);
 
-    setHeading(json?.data?.cards[0]?.card?.card?.header?.title);
+    setWidgetHeading(json?.data?.cards[0]?.card?.card?.header?.title);
+    setResHeading(json?.data?.cards[1]?.card?.card?.header?.title);
 
     setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setlistOfWidgets(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
@@ -50,8 +53,10 @@ const Body = () => {
         <div className="loading">Loading...</div>
       ) : (
         <>
-          <h2 className="widget-heading">{heading}</h2>
-
+        {/* Nav bar and Header  */}
+        <Header/>
+        {/* Widgets List  */}
+          <h2 className="widget-heading">{widgetHeading}</h2>
           <div className="horizontal-scroll-container">
             <button
               className="scroll-button left"
@@ -65,7 +70,6 @@ const Body = () => {
                   key={widget.frequencyCapping.id}
                   // reswidget={widget}
                   listOfwidgets={widget}
-                  setlistOfWidgets={setlistOfWidgets}
                 />
               ))}
             </div>
@@ -77,7 +81,8 @@ const Body = () => {
             </button>
           </div>
 
-          <h2 className="res-heading">Top restaurant chains in Delhi</h2>
+        {/* {top restaurants section } */}
+          <h2 className="res-heading">{resHeading}</h2>
           <div className="res-container">
             {listOfRestaurants?.map((restaurant) => (
               <Link
@@ -85,18 +90,12 @@ const Body = () => {
                 to={"/restaurants/" + restaurant.info.id}
               >
                 <RestaurantCards resData={restaurant} />
+                <RestaurantCards resData={restaurant} />
               </Link>
             ))}
           </div>
 
-          <h2 className="res-heading">
-            Restaurants with online food delivery in Delhi
-          </h2>
-          <div className="res-container">
-            {listOfRestaurants?.map((restaurant) => (
-              <RestaurantCards key={restaurant.info.id} resData={restaurant} />
-            ))}
-          </div>
+       
         </>
       )}
     </>
