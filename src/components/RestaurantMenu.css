@@ -1,0 +1,173 @@
+.resInfo-container {
+    display: flex;
+    flex-direction: column;
+    width: 1500px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vw;
+  }
+  
+  
+  .resInfo-outer {
+    margin: auto;
+    background: linear-gradient(
+      rgb(255, 255, 255) -6.71%,
+      rgb(235, 235, 242) 56.19%,
+      rgb(223, 223, 231) 106.56%
+    );
+    padding: 0px 16px 16px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
+    width: 800px;
+   
+  }
+  
+  .res-info {
+   
+    font-weight: 600;
+    padding: 0.5vw 1vw;
+    border-radius: 20px;
+    border: 1px solid rgba(2, 6, 12, 0.15);
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
+  }
+  
+  .resName {
+    width: 800px;
+    font-family: Basis_Grotesque_Pro;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.4px;
+    color: rgba(2, 6, 12, 0.92);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: start;
+  }
+  
+  .green-star {
+    color: #ffa41b;
+  }
+  
+  .cuisines {
+    text-decoration: underline;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.1px;
+    color: rgb(241, 87, 0);
+    font-family: Basis_Grotesque_Pro_Bold;
+    font-weight: 700;
+  }
+  .areaName {
+  
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #808080;
+  }
+  .restaurant-delivery-time {
+   
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    margin-top: 20px;
+    color: #808080;
+    text-transform: lowercase;
+  
+  }
+  
+  .resInfo-container {
+    padding: 20px;
+  }
+  
+  .resInfo-outer {
+    margin-bottom: 20px;
+  }
+  
+  .deals-section {
+    width: 900px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .scroll-button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  
+  .scroll-button.left {
+    position: absolute;
+    left: -20px;
+  }
+  
+  .scroll-button.right {
+    position: absolute;
+    right: -20px;
+  }
+  
+  .deals-container {
+    display: flex;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    margin: 0 60px; 
+  }
+  
+  .deals-for-you {
+    flex: 0 0 auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-right: 20px;
+    min-width: 200px; /* Ensure that each card has enough width */
+    transition: transform 0.3s;
+  }
+  
+  .deals-for-you:hover {
+    transform: scale(1.05);
+  }
+  
+  .deals-for-you img {
+    margin-right: 15px;
+  }
+  
+  .deals-for-you h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .deals-for-you p {
+    font-size: 14px;
+    color: #888;
+  }
+
+  .coupon{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.45);
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+  }

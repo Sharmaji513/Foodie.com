@@ -6,6 +6,7 @@ import "./Body.css";
 import RestaurantCards from "./RestaurantCards";
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import { API_URL } from "../utils/constents";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -24,12 +25,10 @@ const Body = () => {
 
   const fetchData = async () => {
     setIsLoading(true); // Start loading
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(API_URL);
 
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
 
     setWidgetHeading(json?.data?.cards[0]?.card?.card?.header?.title);
     setResHeading(json?.data?.cards[1]?.card?.card?.header?.title);
@@ -55,6 +54,7 @@ const Body = () => {
         <>
         {/* Nav bar and Header  */}
         <Header/>
+        
         {/* Widgets List  */}
           <h2 className="widget-heading">{widgetHeading}</h2>
           <div className="horizontal-scroll-container">
@@ -67,8 +67,8 @@ const Body = () => {
             <div className="horizontal-scroll" ref={widgetRef}>
               {listOfwidgets?.map((widget) => (
                 <WidgetsList
-                  key={widget.frequencyCapping.id}
-                  // reswidget={widget}
+                  key={widget?.frequencyCapping.id}
+                  reswidget={widget}
                   listOfwidgets={widget}
                 />
               ))}
