@@ -7,38 +7,31 @@ import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState({});
+  const [loading, setLoading] = useState(true); // Add loading state
   const scrollRef = useRef(null);
 
   const { resId } = useParams();
   
-  // console.log(resInfo);
-
   useEffect(() => {
-    getRestaaurantInfo();
-  }, []);
-
+    getRestaurantInfo();
+  }, [resId]);
 
   const info = resInfo?.cards?.[2]?.card?.card?.info || {};
-  
-  const {name,cuisines,costForTwoMessage,avgRating,totalRatingsString,sla,nearestOutletNudge,aggregatedDiscountInfo} = info;
+  const { name, cuisines, costForTwoMessage, avgRating, totalRatingsString, sla, nearestOutletNudge, aggregatedDiscountInfo } = info;
 
   const deals = resInfo?.cards?.[3]?.card?.card?.gridElements?.infoWithStyle;
-  // console.log(deals);
-
-
   const MenuCategory = resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-  // console.log(MenuCategory);
-  
 
-  
-  async function getRestaaurantInfo() {
+  async function getRestaurantInfo() {
+    setLoading(true); // Set loading to true before starting fetch
     try {
       const response = await fetch(MENU_API + resId);
       const result = await response.json();
-      console.log(result.data);
       setResInfo(result.data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false); // Set loading to false after fetch completes
     }
   }
 
@@ -50,13 +43,15 @@ const RestaurantMenu = () => {
     }
   };
 
+  if (loading) {
+    return <div className="loading">Loading...</div>; // Loading indicator
+  }
+
   return (
     <>
       <Navbar />
 
-   
       <div className="resInfo-container">
-
         {/* Restaurant Information section */}
         <h1 className="resName">{name}</h1>
         <div className="resInfo-outer">
@@ -106,14 +101,8 @@ const RestaurantMenu = () => {
                 <div className="deals-for-you" key={index}>
                   <img src={CDN_URL + offer.info.offerLogo} width="50px" alt="" />
                   <div>
-                  <h3>{offer?.info?.header}</h3> 
-                  <pc className="coupon">{offer?.info?.couponCode || offer?.info?.description}</pc>
-                  </div>
-
-
-                  <div> 
-                 
-
+                    <h3>{offer?.info?.header}</h3> 
+                    <p className="coupon">{offer?.info?.couponCode || offer?.info?.description}</p>
                   </div>
                 </div>
               ))}
@@ -127,9 +116,11 @@ const RestaurantMenu = () => {
           </div>
         )}
 
-        {/* acordian section  */}
+        {/* Accordion section */}
         <h1 className="text-center mt-10 font-semibold text-zinc-500">______๑♡⁠๑______ MENU ______๑♡⁠๑______</h1>
-       {MenuCategory?.map((category)=> <RestaurantCategory key={category?.card?.card.title}  data={category.card?.card}/>)}
+        {MenuCategory?.map((category) => (
+          <RestaurantCategory key={category?.card?.card.title} data={category.card?.card} />
+        ))}
       </div>
     </>
   );

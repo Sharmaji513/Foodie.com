@@ -1,50 +1,20 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 import WidgetsList from "./WidgetsList";
-import "./Body.css";
-
 import RestaurantCards from "./RestaurantCards";
-import { Link } from "react-router-dom";
 import Header from "./Header";
-import { API_URL } from "../utils/constents";
+
+import "./Body.css";
+import useFetchRestaurants from "../custom hooks/useFetchRestaurants";
+import useWidgetScroll from "../custom hooks/useWidgetScroll";
 
 const Body = () => {
-  const [listOfRestaurants, setListOfRestaurants] = useState([]);
-  const [listOfwidgets, setlistOfWidgets] = useState([]);
-
-  const [widgetHeading, setWidgetHeading] = useState([]);
-  const [resHeading , setResHeading] = useState([])
-  const [isLoading, setIsLoading] = useState(true); // Loading state
-
-  const widgetRef = useRef(null);
-
- 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    setIsLoading(true); // Start loading
-    const data = await fetch(API_URL);
-
-    const json = await data.json();
-    // console.log(json);
-
-    setWidgetHeading(json?.data?.cards[0]?.card?.card?.header?.title);
-    setResHeading(json?.data?.cards[1]?.card?.card?.header?.title);
-
-    setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setlistOfWidgets(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
-    setIsLoading(false); // End loading
-  };
-
-  const scrollLeft = (ref) => {
-    ref.current.scrollBy({ left: -300, behavior: "smooth" });
-  };
-
-  const scrollRight = (ref) => {
-    ref.current.scrollBy({ left: 300, behavior: "smooth" });
-  };
+  // Using the custom hook for widget scroll and fetching widgets
+  const { widgetHeading, listOfWidgets, widgetRef, scrollLeft, scrollRight } = useWidgetScroll();
+  
+  // Using the custom hook to fetch restaurants
+  const { listOfRestaurants, resHeading, isLoading } = useFetchRestaurants();
 
   return (
     <>
@@ -52,36 +22,29 @@ const Body = () => {
         <div className="loading">Loading...</div>
       ) : (
         <>
-        {/* Nav bar and Header  */}
-        <Header/>
-        
-        {/* Widgets List  */}
+          {/* Header */}
+          <Header />
+
+          {/* Widgets List */}
           <h2 className="widget-heading">{widgetHeading}</h2>
           <div className="horizontal-scroll-container">
-            <button
-              className="scroll-button left"
-              onClick={() => scrollLeft(widgetRef)}
-            >
-               &#8249; {/* Left arrow */}
+            <button className="scroll-button left" onClick={scrollLeft}>
+              &#8249; {/* Left arrow */}
             </button>
             <div className="horizontal-scroll" ref={widgetRef}>
-              {listOfwidgets?.map((widget) => (
+              {listOfWidgets?.map((widget) => (
                 <WidgetsList
-                  key={widget?.frequencyCapping.id}
-                  reswidget={widget}
+                  key={widget?.frequencyCapping?.id}
                   listOfwidgets={widget}
                 />
               ))}
             </div>
-            <button
-              className="scroll-button right"
-              onClick={() => scrollRight(widgetRef)}
-            >
-                &#8250; {/* right arrow */}
+            <button className="scroll-button right" onClick={scrollRight}>
+              &#8250; {/* Right arrow */}
             </button>
           </div>
 
-        {/* {top restaurants section } */}
+          {/* Top restaurants section */}
           <h2 className="res-heading">{resHeading}</h2>
           <div className="res-container">
             {listOfRestaurants?.map((restaurant) => (
@@ -90,12 +53,9 @@ const Body = () => {
                 to={"/restaurants/" + restaurant.info.id}
               >
                 <RestaurantCards resData={restaurant} />
-                <RestaurantCards resData={restaurant} />
               </Link>
             ))}
           </div>
-
-       
         </>
       )}
     </>
