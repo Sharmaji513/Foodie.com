@@ -44,7 +44,6 @@
   font-weight: bold;
   padding: 0.5vw 1vw;
   border: 0.5vw solid #FE5005;
-  border-radius: ;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }

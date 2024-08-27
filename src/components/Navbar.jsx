@@ -7,8 +7,10 @@ import { BiSolidOffer } from "react-icons/bi";
 import { GiShoppingCart } from "react-icons/gi";
 import { CiMedicalCase } from "react-icons/ci";
 import { FaRegUser } from "react-icons/fa";
+import { useSelector } from "react-redux";
 const Navbar = ({ SetShowLogin }) => {
 
+  const cartItems = useSelector((store) => store.cart.items)
 
 
   return (
@@ -35,21 +37,21 @@ const Navbar = ({ SetShowLogin }) => {
           </Link>
         </li>
         <li>
-          <a href="/cart">
-          <span> <GiShoppingCart />Cart </span> 
-          </a>
+          <Link to="/profile">
+          <span><CiMedicalCase /> About us</span>
+          </Link>
         </li>
         <li>
-          <a href="/profile">
-          <span><CiMedicalCase /> About us</span>
-          </a>
+          <Link to="/cart">
+          <span> <GiShoppingCart />Cart <span className="">({cartItems.length})</span> </span> 
+          </Link>
         </li>
       </ul>
-      <div className="navbar-login">
+      {/* <div className="navbar-login">
         <button onClick={() => SetShowLogin(true)} className="signup-btn">
         <span> <FaRegUser /> Login </span>
         </button>
-      </div>
+      </div> */}
     </nav>
   );
 };
