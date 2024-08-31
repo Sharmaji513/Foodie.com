@@ -1,11 +1,10 @@
-/* RestaurantCard.css */
 .restaurant-card {
   display: flex;
   flex-direction: column;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  width: 300px;
+  width: 20vw;
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -17,13 +16,17 @@
 }
 
 .restaurant-info {
-  padding: 15px;
+  padding: 1vw;
 }
 
 .restaurant-name {
-  font-size: 20px;
-  margin: 0 0 10px;
+  font-size: 1.1vw;
+  font-weight: 600;
+  margin-bottom: 10px;
   color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .restaurant-details {
@@ -33,14 +36,8 @@
 }
 
 .restaurant-rating {
-  display: flex;
-  align-items: center;
   font-size: 16px;
   color: #ffa41b;
-}
-
-.restaurant-rating i {
-  margin-right: 5px;
 }
 
 .restaurant-delivery-time {
@@ -51,37 +48,14 @@
 .restaurant-cuisines {
   font-size: 14px;
   color: #777;
-}
-
-.res-heading {
-  font-size: 1.5rem;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .item-counter {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
+  gap: 10px; /* Adds space between the buttons */
 }
 
-#minus {
-  background-color: tomato;
-  color: white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  padding: 4px;
-}
-
-#plus {
-  background-color: green;
-  color: white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  padding: 4px;
-}

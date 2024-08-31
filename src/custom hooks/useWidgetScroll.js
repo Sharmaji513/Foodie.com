@@ -5,11 +5,10 @@ const useWidgetScroll = () => {
   const widgetRef = useRef(null);
   const [listOfWidgets, setListOfWidgets] = useState([]);
   const [widgetHeading, setWidgetHeading] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+ 
 
   useEffect(() => {
     const fetchWidgets = async () => {
-      setIsLoading(true);
       try {
         const data = await fetch(API_URL);
         const json = await data.json();
@@ -40,7 +39,7 @@ const useWidgetScroll = () => {
     }
   };
 
-  return { widgetRef, widgetHeading, listOfWidgets, isLoading, scrollLeft, scrollRight };
+  return { widgetRef, widgetHeading, listOfWidgets, scrollLeft, scrollRight };
 };
 
 export default useWidgetScroll;

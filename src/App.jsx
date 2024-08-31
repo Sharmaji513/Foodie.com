@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Provider store={appStore}>
-        <div className="app">
+        <div className="w-[100%]">
           <Routes>
             <Route path="/" element={<Body />} />
             <Route path="/cart" element={<AddCart/>} />
