@@ -6,7 +6,7 @@ import Restaurants from "./Restaurants";
 
 
 const Body = () => {
-  // Using the custom hook for widget scroll and fetching widgets
+  
 
   return (
     <div className="w-full">
@@ -18,6 +18,7 @@ const Body = () => {
 
       {/* Other components */}
       <TopRestaurant />
+
       <Restaurants />
     </div>
   );

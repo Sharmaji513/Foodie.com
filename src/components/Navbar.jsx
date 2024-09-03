@@ -6,9 +6,8 @@ import { IoHomeOutline, IoRestaurantSharp } from "react-icons/io5";
 import { BiSolidOffer } from "react-icons/bi";
 import { GiShoppingCart } from "react-icons/gi";
 import { CiMedicalCase } from "react-icons/ci";
-import { FaRegUser } from "react-icons/fa";
 import { useSelector } from "react-redux";
-const Navbar = ({ SetShowLogin }) => {
+const Navbar = () => {
 
   const cartItems = useSelector((store) => store.cart.items)
 
@@ -27,8 +26,8 @@ const Navbar = ({ SetShowLogin }) => {
           </Link>
         </li>
         <li>
-          <Link to="/restaurents">
-          <span> <IoRestaurantSharp />Restaurants</span> 
+          <Link to="/search">
+          <span> <IoRestaurantSharp />Search</span> 
           </Link>
         </li>
         <li>
@@ -47,11 +46,7 @@ const Navbar = ({ SetShowLogin }) => {
           </Link>
         </li>
       </ul>
-      {/* <div className="navbar-login">
-        <button onClick={() => SetShowLogin(true)} className="signup-btn">
-        <span> <FaRegUser /> Login </span>
-        </button>
-      </div> */}
+      
     </nav>
   );
 };

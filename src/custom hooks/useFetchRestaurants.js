@@ -22,13 +22,13 @@ const useFetchRestaurants = () => {
 
         setResHeading(json?.data?.cards[1]?.card?.card?.header?.title);
         // console.log(json?.data?.cards[1]?.card?.card?.header?.title);
-        setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
 
         setTopResHeading(json?.data?.cards[2]?.card?.card?.title)
         console.log(json?.data?.cards[2]?.card?.card?.title);
         
-        setListOfTopRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setListOfTopRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
       } catch (error) {
         console.error("Failed to fetch restaurants:", error);

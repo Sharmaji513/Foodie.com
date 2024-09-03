@@ -8,6 +8,8 @@ import appStore from "./store/appStore";
 import AddCart from "./components/AddCart";
 import Offer from "./Pages/Offer";
 
+import SearchBar from "./Pages/SearchBar";
+
 
 
 
@@ -22,6 +24,7 @@ function App() {
             <Route path="/cart" element={<AddCart/>} />
             <Route path="/restaurants/:resId" element={<RestaurantMenu />} />
             <Route path="/offers" element={<Offer/>}/> 
+            <Route path="/search" element={<SearchBar/>}/> 
           </Routes>
         </div>
       </Provider>
