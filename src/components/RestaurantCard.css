@@ -5,15 +5,47 @@
   border-radius: 8px;
   overflow: hidden;
   width: 20vw;
-  margin: 20px;
+  margin: 1.5vw;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resImage-container {
+  position: relative;
+  font-family: "Basis Grotesque Pro", Arial, sans-serif;
+}
+
+.resImage-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Lighter overlay for some lightness */
+  z-index: 1;
 }
 
 .restaurant-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  filter: drop-shadow(rgba(0, 0, 0, 0.3) 0px 4px 12px); /* Image shadow */
+  position: relative;
+  z-index: 0;
 }
+
+.discount {
+  position: absolute;
+  top: 10vw;
+  left: 1vw;
+  font-weight: 800;
+  color: white;
+  font-size: 1.2vw;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Stronger text shadow */
+  z-index: 2; /* Ensures it sits on top of the overlay */
+}
+
+
 
 .restaurant-info {
   padding: 1vw;
