@@ -23,9 +23,8 @@
   }
   
   .res-info {
-   
     font-weight: 600;
-    padding: 0.5vw 1vw;
+    padding:2vw;
     border-radius: 20px;
     border: 1px solid rgba(2, 6, 12, 0.15);
     background: white;
@@ -50,12 +49,13 @@
   }
   
   .cuisines {
+    margin-top: 0.8vw;
     text-decoration: underline;
-    font-size: 14px;
+    font-size: 1vw;
     line-height: 17px;
     letter-spacing: -0.1px;
     color: rgb(241, 87, 0);
-    font-family: Basis_Grotesque_Pro_Bold;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
   }
   .areaName {
@@ -77,6 +77,11 @@
   
   }
   
+  .delivery-info{
+    display: flex;
+    margin-top: 1vw;
+    gap: 0.5vw;
+  }
   .resInfo-container {
     padding: 20px;
   }
