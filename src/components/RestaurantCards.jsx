@@ -4,7 +4,7 @@ import { CDN_URL } from "../utils/constents";
 
 const RestaurantCards = (props) => {
   const { resData } = props;
-  console.log(props);
+  // console.log(props);
 
   const {
     cloudinaryImageId,
@@ -17,6 +17,8 @@ const RestaurantCards = (props) => {
     aggregatedDiscountInfoV3
 
   } = resData.info;
+
+
 
   return (
     <div className="restaurant-card">
