@@ -9,7 +9,7 @@ const useWidgetScroll = () => {
 
   useEffect(() => {
     const fetchWidgets = async () => {
-      try {
+ 
         const data = await fetch(API_URL);
         const json = await data.json();
 
@@ -17,11 +17,9 @@ const useWidgetScroll = () => {
         setListOfWidgets(
           json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info
         );
-      } catch (error) {
-        console.error("Failed to fetch widgets:", error);
-      } finally {
-        setIsLoading(false);
-      }
+  
+       
+     
     };
 
     fetchWidgets();

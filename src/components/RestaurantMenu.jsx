@@ -4,6 +4,7 @@ import { CDN_URL, MENU_API } from "../utils/constents";
 import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import RestaurantCategory from "./RestaurantCategory";
+import  { MenuShimmer } from "./Shimmer";
 
 
 
@@ -57,12 +58,12 @@ const RestaurantMenu = () => {
     }
   };
 
-  if (loading) {
-    return <div className="loading">Loading...</div>; // Loading indicator
-  }
+ 
 
   return (
     <>
+   
+    {loading ? (<MenuShimmer/>) :  <>
       <Navbar />
 
       <div className="resInfo-container">
@@ -158,6 +159,7 @@ const RestaurantMenu = () => {
           />
         ))}
       </div>
+    </>}
     </>
   );
 };

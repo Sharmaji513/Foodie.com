@@ -18,10 +18,9 @@ const useFetchRestaurants = () => {
         const json = await data.json();
 
         // console.log(json);
-        
-
         setResHeading(json?.data?.cards[1]?.card?.card?.header?.title);
         // console.log(json?.data?.cards[1]?.card?.card?.header?.title);
+        
         setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
 
