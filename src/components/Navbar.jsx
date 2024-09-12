@@ -2,11 +2,12 @@ import React from "react";
 import "./Navbar.css";
 
 import { Link } from "react-router-dom";
-import { IoHomeOutline, IoRestaurantSharp } from "react-icons/io5";
+import { IoFastFoodSharp, IoHomeOutline, IoRestaurantSharp } from "react-icons/io5";
 import { BiSolidOffer } from "react-icons/bi";
 import { GiShoppingCart } from "react-icons/gi";
 import { CiMedicalCase } from "react-icons/ci";
 import { useSelector } from "react-redux";
+import { SiIfood } from "react-icons/si";
 const Navbar = () => {
 
   const cartItems = useSelector((store) => store.cart.items)
@@ -36,8 +37,8 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/profile">
-          <span><CiMedicalCase /> About us</span>
+          <Link to="/grocery ">
+          <span ><IoFastFoodSharp />Grocery</span>
           </Link>
         </li>
         <li>

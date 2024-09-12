@@ -9,6 +9,7 @@ import AddCart from "./components/AddCart";
 import Offer from "./Pages/Offer";
 
 import SearchBar from "./Pages/SearchBar";
+import Grocery from "./Pages/Grocery";
 
 
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/cart" element={<AddCart/>} />
             <Route path="/restaurants/:resId" element={<RestaurantMenu />} />
             <Route path="/offers" element={<Offer/>}/> 
+            <Route path="/grocery" element={<Grocery/>}/> 
             <Route path="/search" element={<SearchBar/>}/> 
           </Routes>
         </div>
