@@ -1,29 +1,34 @@
+.widget-container {
+  width: 98vw;
+ overflow-x: hidden;
+}
+
 .widget-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 11vw;
   margin: 1.5vw;
+  margin: 2vw auto;
 }
 
 .widget-image {
   width: 12vw;
-  min-width: 80px;
+  min-width: 10vw;
   object-fit: cover;
   cursor: pointer;
-
 }
 
-.widget-heading{
+.widget-heading {
   text-align: center;
-  font-size:2vw;
+  font-size: 2vw;
   margin: 50px 0px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
-.widgets-container hr{
+.widgets-container hr {
   margin: 10px 0px;
-  height: 2px;
+  height: 0.1vw;
   background-color: #e2e2e2;
   border: none;
 }
@@ -32,6 +37,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  
 }
 
 .horizontal-scroll {
@@ -41,25 +47,25 @@
   scrollbar-width: none; /* Firefox */
   scroll-behavior: smooth;
   margin-top: -3vw;
-
 }
 
 .horizontal-scroll::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
 
-.widget-heading, .res-heading {
+.widget-heading,
+.res-heading {
   margin: 20px 0;
 }
 
-.scroll-button {
+.widget-scroll-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.8);
   border: none;
   color: #333;
-  font-size: 33px;
+  font-size: 2vw;
   padding: 0px 18px;
   cursor: pointer;
   z-index: 1;
@@ -68,5 +74,13 @@
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.widget-scroll-button.left {
+  position: absolute;
+  left: 1vw;
+}
 
+.widget-scroll-button.right {
+  position: absolute;
+  right: 1vw;
+}
 

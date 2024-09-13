@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Header from "./Header";
 import WidgetsList from "./WidgetsList";
 import TopRestaurant from "./TopRestaurant";
 import Restaurants from "./Restaurants";
 
-
 const Body = () => {
-
   return (
-    <div className="w-full">
+    <div>
       {/* Header */}
       <Header />
 
       {/* Widgets List */}
       <WidgetsList />
 
-      {/* Top Restaurant Section */}
-      <TopRestaurant />
+      <div className="w-[95vw] h-full">
+        {/* Top Restaurant Section */}
+        <TopRestaurant />
 
-      {/* Restaurants Section */}
-      <Restaurants />
+        {/* Restaurants Section */}
+        <Restaurants />
+      </div>
     </div>
   );
 };

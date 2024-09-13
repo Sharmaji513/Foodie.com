@@ -15,8 +15,9 @@
 .left-side img,
 .right-side img {
   max-width: 100%;
+  width: 20vw;
   height: auto;
-  margin: 0 2vw;
+  margin: 0 0.5vw;
   animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
@@ -33,30 +34,41 @@
 }
 .sub-heading{
   font-family: cursive;
- 
+  font-size: 1.3vw;
   margin-bottom: 0.5vw;
   color:rgb(205, 203, 90);
  
 }
-.order-btn{
-  background-color:rgba(4, 128, 4, 0.897);
+.order-btn {
+  display: flex;
+  gap: 0.5vw;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  background-color:#6da036;/* Example red color */
   color: white;
-  font-weight: bold;
-  padding: 0.5vw 1vw;
-  border: 0.5vw solid #FE5005;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  
 }
 
-.order-btn:hover{
-  background-color: rgb(18, 151, 18);
+.order-btn:hover {
+  background-color:#74ad36; /* Darker red for hover effect */
 }
+
+
 /* Left image animation - moves from left to right */
 .left-side img {
   transform: translateX(-100%);
   animation-name: moveRight;
 }
 
+
+/* Animations */
 @keyframes moveRight {
   0% {
       transform: translateX(-100%);
@@ -81,60 +93,3 @@
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .header-container {
-      flex-direction: column;
-      width: 100%;
-      height: 100vw;
-  }
-
-  .left-side img {
-      width: 50vw;
-      height: 50vw;
-      margin: 50vw 0 0 20vw;
-      padding: 0;
-      box-sizing: border-box;
-      animation-name: slideInLeft; /* Adjust for smaller screens */
-  }
-
-  .right-side img {
-      display: none;
-  }
-
-  .tagline {
-      width: 100%;
-      max-width: 100%;
-      margin: 0;
-      padding: 20px;
-      box-sizing: border-box;
-  }
-
-  .main-heading {
-      font-size: 40px;
-      text-align: center;
-      margin-top: 20px;
-  }
-
-  .sub-heading {
-      display: none;
-  }
-
-  .tagline button {
-      font-size: 14px;
-      padding: 8px 16px;
-      margin-top: 20px;
-  }
-}
-
-/* Keyframes for smaller screens (optional) */
-@keyframes slideInLeft {
-  0% {
-      transform: translateX(-100%);
-      opacity: 0;
-  }
-  100% {
-      transform: translateX(0);
-      opacity: 1;
-  }
-}

@@ -1,7 +1,7 @@
 .resInfo-container {
     display: flex;
     flex-direction: column;
-    width: 1500px;
+    width: 98vw;
     align-items: center;
     justify-content: center;
     margin-top: 3vw;
@@ -15,10 +15,10 @@
       rgb(235, 235, 242) 56.19%,
       rgb(223, 223, 231) 106.56%
     );
-    padding: 0px 16px 16px;
-    border-bottom-left-radius: 36px;
-    border-bottom-right-radius: 36px;
-    width: 800px;
+    padding: 0px 1.5vw 1vw;
+    border-bottom-left-radius: 1.5vw;
+    border-bottom-right-radius: 1.5vw;
+   width: 55vw;
    
   }
   
@@ -32,14 +32,14 @@
   }
   
   .resName {
-    width: 800px;
+    width: 50vw;
     font-family: Basis_Grotesque_Pro;
     font-weight: 800;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 1.5vw;
+    line-height: 1vw;
     letter-spacing: -0.4px;
     color: rgba(2, 6, 12, 0.92);
-    margin-bottom: 20px;
+    margin-bottom: 1.2vw;
     display: flex;
     justify-content: start;
   }
@@ -52,7 +52,7 @@
     margin-top: 0.8vw;
     text-decoration: underline;
     font-size: 1vw;
-    line-height: 17px;
+    line-height: 0.9vw;
     letter-spacing: -0.1px;
     color: rgb(241, 87, 0);
     font-family: Arial, Helvetica, sans-serif;
@@ -61,17 +61,17 @@
   .areaName {
   
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 0.8vw;
     color: #808080;
   }
   .restaurant-delivery-time {
    
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 1.5vw;
     line-height: 18px;
     letter-spacing: -0.3px;
-    margin-top: 20px;
+    margin-top: 1vw;
     color: #808080;
     text-transform: lowercase;
   
@@ -83,28 +83,28 @@
     gap: 0.5vw;
   }
   .resInfo-container {
-    padding: 20px;
+    padding: 0.9vw;
   }
   
   .resInfo-outer {
-    margin-bottom: 20px;
+    margin-bottom: 0.8vw;
   }
   
   .deals-section {
-    width: 900px;
+    width: 60vw;
     position: relative;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 1vw;
   }
   
   .scroll-button {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width:3vw;
+    height: 3vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,20 +115,20 @@
   
   .scroll-button.left {
     position: absolute;
-    left: -20px;
+    left: -0.5vw;
   }
   
   .scroll-button.right {
     position: absolute;
-    right: -20px;
+    right: -0.5vw;
   }
   
   .deals-container {
     display: flex;
     overflow-x:hidden;
     scroll-behavior: smooth;
-    padding: 10px 0;
-    margin: 0 60px; 
+    padding: 0.5vw 0;
+    margin: 0 4vw; 
   }
   
   .deals-for-you {
@@ -158,14 +158,14 @@
   }
   
   .deals-for-you p {
-    font-size: 14px;
+    font-size: 0.8vw;
     color: #888;
   }
 
   .coupon{
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 0.5vw;
     line-height: 18px;
     letter-spacing: -0.3px;
     color: rgba(2, 6, 12, 0.45);

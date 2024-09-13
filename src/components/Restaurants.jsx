@@ -37,8 +37,8 @@ const Restaurants = () => {
   // console.log(filteredRestaurants);
 
   return (
-    <div className="max-w-[98vw]  mx-5">
-      <div className="text-2xl font-bold mx-20 mt-10 my-5">{resHeading}</div>
+    <div className="max-w-[95vw]  mx-auto mb-4">
+      <div className="text-[1.5vw] font-bold mx-20 mt-10 my-5">{resHeading}</div>
 
       {isLoading ? (
         <Shimmer/>

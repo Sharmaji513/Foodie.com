@@ -5,9 +5,8 @@ import { Link } from "react-router-dom";
 import { IoFastFoodSharp, IoHomeOutline, IoRestaurantSharp } from "react-icons/io5";
 import { BiSolidOffer } from "react-icons/bi";
 import { GiShoppingCart } from "react-icons/gi";
-import { CiMedicalCase } from "react-icons/ci";
 import { useSelector } from "react-redux";
-import { SiIfood } from "react-icons/si";
+
 const Navbar = () => {
 
   const cartItems = useSelector((store) => store.cart.items)

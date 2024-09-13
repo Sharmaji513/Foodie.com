@@ -3,6 +3,10 @@ import "./Header.css";
 import Navbar from "./Navbar";
 import  { ShimmerHeader } from "./Shimmer";
 import useFetchRestaurants from "../custom hooks/useFetchRestaurants";
+import { Link } from "react-router-dom";
+import { SiIfood } from "react-icons/si";
+import { IoFastFoodSharp } from "react-icons/io5";
+
 
 const Header = () => {
   const { isLoading } = useFetchRestaurants(); // Destructure isLoading from useFetchRestaurants
@@ -10,7 +14,7 @@ const Header = () => {
   return (
     <div>
       {isLoading ? (
-        <ShimmerHeader /> // Render the shimmer effect while loading
+        <ShimmerHeader /> 
       ) : (
         <>
           <Navbar />
@@ -26,7 +30,11 @@ const Header = () => {
             <div className="tagline">
               <h1 className="main-heading">Swad Jo Aapke Ghar Tak Aaye...</h1>
               <p className="sub-heading">Fresh Food, Fast Delivery</p>
-              <button className="order-btn">Order Now</button>
+         
+              <Link to="/search">
+                <button className="order-btn"> <IoFastFoodSharp />Order Now</button>
+              </Link>
+           
             </div>
 
             <div className="right-side">

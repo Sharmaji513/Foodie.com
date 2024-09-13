@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { WIDGETS_IMG } from "../utils/constents";
 import './WidgetsList.css'
 import useWidgetScroll from "../custom hooks/useWidgetScroll";
@@ -12,11 +12,13 @@ const WidgetsList = () => {
 
   const { widgetHeading, listOfWidgets } = useWidgetScroll();
 
-  // Scroll left and right handlers
+  // console.log(listOfWidgets);
+  
+ 
   const scrollLeft = () => {
     widgetRef.current.scrollBy({
       top: 0,
-      left: -300, // Adjust the scroll amount as needed
+      left: -300, 
       behavior: "smooth",
     });
   };
@@ -24,28 +26,28 @@ const WidgetsList = () => {
   const scrollRight = () => {
     widgetRef.current.scrollBy({
       top: 0,
-      left: 300, // Adjust the scroll amount as needed
+      left: 300, 
       behavior: "smooth",
     });
   };
 
   return (
-    <div className="w-[95vw]">
+    <div className="widget-container">
       {/* Widget Heading */}
       <h2 className="widget-heading">{widgetHeading}</h2>
 
-      {/* Conditionally Render Shimmer or the Widgets List */}
-      {!listOfWidgets || listOfWidgets.length === 0 ? (
-        <Shimmer/> // Show shimmer if the data is not yet available
+      
+      { listOfWidgets?.length === 0 ? (
+        <Shimmer/> 
       ) : (
         <div className="horizontal-scroll-container">
-          <button className="scroll-button left" onClick={scrollLeft}>
+          <button className="widget-scroll-button left" onClick={scrollLeft}>
             &#8249; {/* Left arrow */}
           </button>
           <div className="horizontal-scroll" ref={widgetRef} >
             {listOfWidgets?.map((widget) => (
               <div
-                key={widget?.frequencyCapping?.id}
+                key={widget?.id}
                 className="widgets-container"
               >
                 <div className="widget-card">
@@ -63,7 +65,7 @@ const WidgetsList = () => {
               </div>
             ))}
           </div>
-          <button className="scroll-button right" onClick={scrollRight}>
+          <button className="widget-scroll-button right" onClick={scrollRight}>
             &#8250; {/* Right arrow */}
           </button>
         </div>

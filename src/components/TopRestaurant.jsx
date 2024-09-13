@@ -26,7 +26,7 @@ const TopRestaurant = () => {
   };
 
   return (
-    <div className="max-w-[95vw] mx-5">
+    <div className=" max-w-[95vw]  mx-auto">
       {/* Show shimmer loader while data is loading */}
       {isLoading ? (
         <Shimmer/>
@@ -34,7 +34,7 @@ const TopRestaurant = () => {
         <>
           {/* Top restaurants section heading and scroll buttons */}
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold mx-20 mt-10">{topResHeading}</div>
+            <div className="text-[1.5vw] font-bold mx-20 mt-10">{topResHeading}</div>
             <div className="flex">
               <div
                 onClick={scrollLeft}
